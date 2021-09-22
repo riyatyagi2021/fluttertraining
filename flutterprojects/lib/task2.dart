@@ -2,7 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutterprojects/additem.dart';
-import 'package:flutterprojects/rowcolumn.dart';
+import 'package:flutterprojects/profile.dart';
+import 'package:flutterprojects/profile_list_api.dart';
+import 'package:flutterprojects/weather_api.dart';
+
 
 void main(){
   runApp(Sample());
@@ -63,7 +66,7 @@ class _PageSecondState extends State<PageSecond> {
                       ),),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 13),
+                      margin: EdgeInsets.only(top: 2),
                       child: Image.asset('assets/images/smiley.jpeg', height: 40,
                         width:40,),
                     ),
@@ -505,7 +508,12 @@ class _PageSecondState extends State<PageSecond> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        onPressed: () { },
+        onPressed: () {
+          Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => AddItem()),
+            );
+          },
         focusElevation: 2,
         tooltip: 'Increment',
         child: Icon(Icons.add),
@@ -527,18 +535,35 @@ class _PageSecondState extends State<PageSecond> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      IconButton(
-                       icon:Icon   (Icons.home),
-                      onPressed: (){
-                          Navigator.push(
-                              context,
-                         MaterialPageRoute(builder: (context) => AddItem()),
-                              );
-                                },),
-                      Icon((Icons.menu),size: 25),
+                      Icon((Icons.home),size: 25),
+                IconButton(
+                  icon: Icon(Icons.cloud,size: 25),
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Weather()),
+                    );
+                  },
+                ),
                       SizedBox.shrink(),
-                      Icon((Icons.message),size: 25),
-                      Icon((Icons.contacts),size: 25),
+                IconButton(
+                  icon: Icon(Icons.list,size: 25),
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ProfileList()),
+                    );
+                  },
+                ),
+                      IconButton(
+                          icon: Icon(Icons.api,size: 25),
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Profile()),
+                          );
+                        },
+                          ),
                     ],
                   ),
                 ),
