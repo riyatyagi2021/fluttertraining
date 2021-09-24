@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -36,39 +35,19 @@ class Main {
   }
 }
 
+class Weather extends StatefulWidget {
+  const Weather({Key? key}) : super(key: key);
 
-void main(){
-    runApp(Myapp());
+  @override
+  _WeatherState createState() => _WeatherState();
 }
 
 
-class Myapp extends StatelessWidget {
-  const Myapp({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: SafeArea(child: Weather()),
-    );
-  }
-  }
-  class Weather extends StatefulWidget {
-    const Weather({Key? key}) : super(key: key);
-
-    @override
-    _WeatherState createState() => _WeatherState();
-  }
-
-
-
-  class _WeatherState extends State<Weather> {
-    var maindata;
-    var tempMax;
-    var tempMin;
+class _WeatherState extends State<Weather> {
+  var maindata;
+ /* var tempMax;
+  var tempMin;*/
 
 
   Future weather()async{
@@ -79,48 +58,118 @@ class Myapp extends StatelessWidget {
     var data=jsonDecode(response.body);
 
 
-   setState(() {
-     maindata=data['main'];
-    // desc=data['weather'];
-   });
-    double temp=maindata['temp'];
-    double tempMax=maindata['tempMax'];
-    double tempMin=maindata['tempMin'];
-    print(temp);
+    setState(() {
+      maindata=data['main'];
+      // desc=data['weather'];
+
+    });
+    // double temp=maindata['temp'];
+    // tempMax=maindata['tempMax'];
+    //   tempMin=maindata['tempMin'];
+    //  print(temp);
+    // print(tempMax);
+    //   print(tempMin);
 
   }
-@override
+  @override
   void initState() {
     super.initState();
     weather();
   }
 
-    @override
-    Widget build(BuildContext context) {
-      return Scaffold(
-        body: Container(
-          child: Center(
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        margin: EdgeInsets.fromLTRB(10,50,10,20),
+        child: Container(
+         // color: Colors.grey,
+            decoration: new BoxDecoration(
+              image: new DecorationImage(
+                image: AssetImage('assets/images/hi.jpeg'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            height: 150,
+            padding:EdgeInsets.all(15) ,
+            margin: EdgeInsets.all(20),
+
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(" Temperature is  -      ${maindata['temp']} "),
-                Text(" Max Temperature is -    ${maindata['tempMax']} "),
-                Text(" Min Temperature is -   ${maindata['tempMin']} "),
-                Text(" Humidity is  -  ${maindata['humidity']} "),
-                Text(" Pressure is  -  ${maindata['pressure']} "),
-               // Text(" Temperature is ${desc['description']} "),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(" Temperature - ", style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black)),
+                    Text("${maindata['temp']}",style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.yellow)),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(" Temperature Max - ", style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black)),
+                    Text("${maindata['temp_max']}",style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.yellow)),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(" Temperature Min- ", style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black)),
+                    Text("${maindata['temp_min']}",style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.yellow)),
+                  ],
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.center,
+
+                  children: [
+                    Text(" Humidity - ", style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black)),
+                    Text(" ${maindata['humidity']}",style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.yellow)),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(" Pressure  - ", style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black)),
+                    Text("${maindata['pressure']}",style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.yellow)),
+                  ],
+                ),
               ],
             )
-
-
-
-
-          ),
         ),
-      );
-    }
+      ),
+    );
   }
-
+}
 
 
 

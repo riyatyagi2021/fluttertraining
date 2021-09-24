@@ -36,7 +36,7 @@ class Data {
     profileImage = json['profile_image'];
   }
 
-  Map<String, dynamic> toJson() {
+  /*Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['employee_name'] = this.employeeName;
@@ -44,5 +44,5 @@ class Data {
     data['employee_age'] = this.employeeAge;
     data['profile_image'] = this.profileImage;
     return data;
-  }
+  }*/
 }

@@ -37,22 +37,17 @@ class _LoginState extends State<Login> {
       body: Container(
         height: 750,
         width: 360,
+        color: Colors.teal,
 
-        color: Colors.grey,
-        child: Container(
-          height:100,
-          width: 340,
-          color: Colors.yellow,
-          margin: EdgeInsets.all(20),
-          padding:  EdgeInsets.symmetric(horizontal: 70,vertical: 30),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('Login Here',style: TextStyle(
                     fontSize: 30,fontWeight: FontWeight.bold,color: Colors.black
                 ),),
             Container(
-                margin: EdgeInsets.only(top: 50),
+                margin: EdgeInsets.symmetric(horizontal: 50,vertical: 50),
                 child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -61,7 +56,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 30),
+                margin: EdgeInsets.symmetric(horizontal: 50,vertical: 5),
                 child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -86,10 +81,6 @@ class _LoginState extends State<Login> {
             ],
           ),
         ),
-
-      ),
-
-
     );
   }
 }

@@ -24,26 +24,6 @@ class User{
 }
 
 
-
-void main() {
-  runApp(Layout());
-}
-
-class Layout extends StatelessWidget {
-  const Layout({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: SafeArea(child: ProfileList()),
-    );
-  }
-}
-
 class ProfileList extends StatefulWidget {
   const ProfileList({Key? key}) : super(key: key);
 
@@ -91,7 +71,7 @@ var jondata=jsonDecode(response.body);
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
                     padding: EdgeInsets.all(20),
-                    color: Colors.purpleAccent,
+                    color: Colors.blue,
                     margin: EdgeInsets.all(30),
                       child: Column(
                         children: [

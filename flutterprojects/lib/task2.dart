@@ -49,6 +49,14 @@ class _PageSecondState extends State<PageSecond> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        titleSpacing: -5,
+        backgroundColor: Colors.grey,
+        title: Text("Hi Riya!!", style: TextStyle(
+            fontWeight: FontWeight.bold,fontSize: 30, color: Colors.black
+        ),),
+      ),
+      drawer:Drawer() ,
       body: Container(
         margin: EdgeInsets.all(10.0),
         child: ListView(
@@ -59,20 +67,20 @@ class _PageSecondState extends State<PageSecond> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Padding(
+                  /*  Padding(
                       padding: const EdgeInsets.fromLTRB(5,10,10,10),
                       child: Text("Hi Riya!!", style: TextStyle(
                         fontWeight: FontWeight.bold,fontSize: 30, color: Colors.black
                       ),),
-                    ),
-                    Container(
+                    ),*/
+                    /*Container(
                       margin: EdgeInsets.only(top: 2),
                       child: Image.asset('assets/images/smiley.jpeg', height: 40,
                         width:40,),
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 130),
-                        child: Icon(Icons.doorbell_sharp)),
+                        child: Icon(Icons.doorbell_sharp))*/
                   ],
                 ),
                 Container(
