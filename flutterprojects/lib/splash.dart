@@ -35,7 +35,7 @@ class SplashScreenState extends State<MyHomePage> {
     return Container(
       height: double.infinity,
         width: double.infinity,
-        child:Image.asset('assets/images/gal.jpeg',fit: BoxFit.cover,)
+        child:Image.asset('assets/images/wall2.jpeg',fit: BoxFit.fill,)
     );
   }
 }
