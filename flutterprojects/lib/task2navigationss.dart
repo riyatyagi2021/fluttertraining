@@ -6,6 +6,8 @@ import 'package:flutterprojects/profile.dart';
 import 'package:flutterprojects/profile_list_api.dart';
 import 'package:flutterprojects/weather_api.dart';
 
+import 'pagesdrawer/bottom_navigationbar.dart';
+
 
 void main(){
   runApp(Sample());
@@ -56,7 +58,56 @@ class _PageSecondState extends State<PageSecond> {
             fontWeight: FontWeight.bold,fontSize: 30, color: Colors.black
         ),),
       ),
-      drawer:Drawer() ,
+      drawer:Drawer(
+        elevation: 5,
+        child: ListView(
+          children: [
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                child: Text("RT"),
+              backgroundColor: Colors.brown,
+              ),
+                accountName: Text("Riya Tyagi"),
+                accountEmail: Text("tyagi.riya@gmail.com"),),
+            ListTile(
+              title: Text("Next Page"),
+                trailing: Icon(Icons.navigate_next),
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(context,MaterialPageRoute(builder:(context)=>MyNavigationBar()));
+                
+              },
+            ),
+            ListTile(
+
+              title: Text("Email"),
+              trailing: Icon(Icons.email),
+            ),
+            ListTile(
+              title: Text("Cloud"),
+              trailing: Icon(Icons.cloud),
+            ),
+            ListTile(
+              title: Text("Star"),
+              trailing: Icon(Icons.star),
+            ), ListTile(
+              title: Text("Album"),
+              trailing: Icon(Icons.album),
+            ), ListTile(
+              title: Text("Call"),
+              trailing: Icon(Icons.add_ic_call),
+            ),
+               Divider(),
+            ListTile(
+              tileColor: Colors.amber,
+              title: Text("Thank You!! Click to Exit"),
+              trailing: Icon(Icons.thumb_up_alt),
+              onTap:()=> Navigator.of(context).pop(),
+                    ),
+
+          ],
+        ),
+      ) ,
       body: Container(
         margin: EdgeInsets.all(10.0),
         child: ListView(

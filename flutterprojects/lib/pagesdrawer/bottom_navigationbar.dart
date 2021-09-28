@@ -1,25 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutterprojects/main.dart';
-import 'package:flutterprojects/rowcolumn.dart';
-import 'package:flutterprojects/task1.dart';
-import 'package:flutterprojects/task2.dart';
+import 'package:flutterprojects/pagesdrawer/secondpage.dart';
+import 'package:flutterprojects/pagesdrawer/firstpage.dart';
+import 'package:flutterprojects/pagesdrawer/thirdpage.dart';
 
-//void main() => runApp(MyApp());
-
-
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SafeArea(child: MyNavigationBar ()),
-    );
-  }
-}
 
 class MyNavigationBar extends StatefulWidget {
-  MyNavigationBar ({Key? key}) : super(key: key);
+
+  MyNavigationBar ( {Key? key}) : super(key: key);
 
   @override
   _MyNavigationBarState createState() => _MyNavigationBarState();
@@ -27,7 +14,7 @@ class MyNavigationBar extends StatefulWidget {
 
 class _MyNavigationBarState extends State<MyNavigationBar > {
   int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions = <Widget>[PageFirst(),MyLoginPage(),Sample()];
+  static const List<Widget> _widgetOptions = <Widget>[PageFirst(),SecondPage(),ThirdPage()];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -38,7 +25,6 @@ class _MyNavigationBarState extends State<MyNavigationBar > {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Drawer"),),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),

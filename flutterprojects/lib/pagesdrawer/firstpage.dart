@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutterprojects/bottom_navigationbar.dart';
+import 'package:flutterprojects/pagesdrawer/bottom_navigationbar.dart';
 
 /*void main(){
   runApp(Layout());

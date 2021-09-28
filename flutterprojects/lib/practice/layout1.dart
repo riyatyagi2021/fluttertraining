@@ -1,23 +1,6 @@
 import 'package:flutter/material.dart';
 
-/*void main(){
-  runApp(Layout());
-}*/
 
-class Layout extends StatelessWidget {
-  const Layout({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: SafeArea(child: Sample ()),
-    );
-  }
-}
 class Sample extends StatefulWidget {
   const Sample({Key? key}) : super(key: key);
 
