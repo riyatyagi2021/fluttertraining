@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class SecondPage extends StatelessWidget {
    SecondPage({Key? key}) : super(key: key);
-  final List<String> items = List.generate(30, (i) => " Items  ${i}");
+  final List<String> items = List.generate(30, (i) => " Item  ${i+1}");
 
 
   @override
@@ -17,7 +17,7 @@ class SecondPage extends StatelessWidget {
           itemBuilder: (context, int index) {
               return Dismissible(
                 background: Container(
-                 color: Colors.brown,
+                 color: Colors.red,
                 ),
                   key: Key(items[index]),
                   child: ListTile(
@@ -34,20 +34,4 @@ class SecondPage extends StatelessWidget {
     );
   }
 }
-/*class SecondPage extends StatefulWidget {
-  const SecondPage({Key? key}) : super(key: key);
 
-  @override
-  _SecondPageState createState() => _SecondPageState();
-}
-
-class _SecondPageState extends State<SecondPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Text("Hello"),
-      ),
-    );
-  }
-}*/

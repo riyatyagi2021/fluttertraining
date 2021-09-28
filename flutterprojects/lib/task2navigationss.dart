@@ -2,16 +2,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutterprojects/additem.dart';
+import 'package:flutterprojects/pagesdrawer/tabview.dart';
 import 'package:flutterprojects/profile.dart';
 import 'package:flutterprojects/profile_list_api.dart';
 import 'package:flutterprojects/weather_api.dart';
 
 import 'pagesdrawer/bottom_navigationbar.dart';
 
-
-void main(){
-  runApp(Sample());
-}
 
 
 class Sample extends StatelessWidget {
@@ -38,13 +35,7 @@ class PageSecond extends StatefulWidget {
 
 class _PageSecondState extends State<PageSecond> {
 
-  int _selectedIndex = 0;
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
 
 
@@ -70,21 +61,23 @@ class _PageSecondState extends State<PageSecond> {
                 accountName: Text("Riya Tyagi"),
                 accountEmail: Text("tyagi.riya@gmail.com"),),
             ListTile(
-              title: Text("Next Page"),
+              title: Text("BottomSheet"),
                 trailing: Icon(Icons.navigate_next),
               onTap: (){
                 Navigator.pop(context);
                 Navigator.push(context,MaterialPageRoute(builder:(context)=>MyNavigationBar()));
-                
               },
             ),
             ListTile(
-
-              title: Text("Email"),
-              trailing: Icon(Icons.email),
+              title: Text("TabView"),
+              trailing: Icon(Icons.tab),
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(context,MaterialPageRoute(builder:(context)=>ToggleBar()));
+              },
             ),
             ListTile(
-              title: Text("Cloud"),
+              title: Text("TabView"),
               trailing: Icon(Icons.cloud),
             ),
             ListTile(
@@ -102,9 +95,7 @@ class _PageSecondState extends State<PageSecond> {
               tileColor: Colors.amber,
               title: Text("Thank You!! Click to Exit"),
               trailing: Icon(Icons.thumb_up_alt),
-              onTap:()=> Navigator.of(context).pop(),
-                    ),
-
+              onTap:()=> Navigator.of(context).pop(),),
           ],
         ),
       ) ,
