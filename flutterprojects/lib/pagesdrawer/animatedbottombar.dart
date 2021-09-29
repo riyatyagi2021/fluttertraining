@@ -1,5 +1,6 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutterprojects/pagesdrawer/tabview.dart';
 
 
@@ -39,6 +40,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
                     onTap: (){
                       setState(() {
                         bottomicons=BottomIcons.Home;
+                        HapticFeedback.lightImpact();
                         _value = 'home';
                       });
                     },
@@ -64,6 +66,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
                       onTap: (){
                         setState(() {
                           bottomicons=BottomIcons.Favorite;
+                          HapticFeedback.lightImpact();
                           _value = 'fav';
                         });
                       },
@@ -89,6 +92,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
                       onTap: (){
                         setState(() {
                           bottomicons=BottomIcons.Email;
+                          HapticFeedback.lightImpact();
                           _value = 'email';
                         });
                       },
@@ -114,6 +118,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
                       onTap: (){
                         setState(() {
                           bottomicons=BottomIcons.Settings;
+                          HapticFeedback.lightImpact();
                           _value = 'setting';
                         });
                       },
@@ -139,6 +144,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
                       onTap: (){
                         setState(() {
                           bottomicons=BottomIcons.Account;
+                          HapticFeedback.lightImpact();
                           _value = 'account';
                         });
                       },
@@ -184,7 +190,7 @@ class _AnimatedBottomBarState extends State<AnimatedBottomBar> {
      }
      else if( value == 'setting'){
        return Container(
-           color: Colors.yellow
+           color: Colors.purple
        );
      }
      else if( value == 'account'){
