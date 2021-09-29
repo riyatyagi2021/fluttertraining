@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutterprojects/additem.dart';
 import 'package:flutterprojects/pagesdrawer/animatedbottombar.dart';
+import 'package:flutterprojects/pagesdrawer/animationslottie.dart';
 import 'package:flutterprojects/pagesdrawer/tabview.dart';
 import 'package:flutterprojects/profile.dart';
 import 'package:flutterprojects/profile_list_api.dart';
@@ -80,8 +81,12 @@ class _PageSecondState extends State<PageSecond> {
             ),
             Divider(),
             ListTile(
-              title: Text("Cloud"),
-              trailing: Icon(Icons.cloud),
+              title: Text("Animations"),
+              trailing: Icon(Icons.animation),
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(context,MaterialPageRoute(builder:(context)=>Animations()));
+              },
             ),
             Divider(),
             ListTile(
@@ -108,7 +113,7 @@ class _PageSecondState extends State<PageSecond> {
         ),
       ) ,
       body: Container(
-        margin: EdgeInsets.only(left: 10.0, right: 10.0),
+        margin  : EdgeInsets.only(left: 10.0, right: 10.0),
         child: ListView(
           physics: BouncingScrollPhysics(),
           children: [
