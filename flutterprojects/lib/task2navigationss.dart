@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutterprojects/additem.dart';
+import 'package:flutterprojects/pagesdrawer/animatedbottombar.dart';
 import 'package:flutterprojects/pagesdrawer/tabview.dart';
 import 'package:flutterprojects/profile.dart';
 import 'package:flutterprojects/profile_list_api.dart';
@@ -68,25 +69,32 @@ class _PageSecondState extends State<PageSecond> {
                 Navigator.push(context,MaterialPageRoute(builder:(context)=>MyNavigationBar()));
               },
             ),
+            Divider(),
             ListTile(
               title: Text("TabView"),
               trailing: Icon(Icons.tab),
               onTap: (){
                 Navigator.pop(context);
-                Navigator.push(context,MaterialPageRoute(builder:(context)=>ToggleBar()));
+                Navigator.push(context,MaterialPageRoute(builder:(context)=>AnimatedBottomBar()));
               },
             ),
+            Divider(),
             ListTile(
-              title: Text("TabView"),
+              title: Text("Cloud"),
               trailing: Icon(Icons.cloud),
             ),
+            Divider(),
             ListTile(
               title: Text("Star"),
               trailing: Icon(Icons.star),
-            ), ListTile(
+            ),
+            Divider(),
+            ListTile(
               title: Text("Album"),
               trailing: Icon(Icons.album),
-            ), ListTile(
+            ),
+            Divider(),
+            ListTile(
               title: Text("Call"),
               trailing: Icon(Icons.add_ic_call),
             ),
@@ -100,8 +108,9 @@ class _PageSecondState extends State<PageSecond> {
         ),
       ) ,
       body: Container(
-        margin: EdgeInsets.all(10.0),
+        margin: EdgeInsets.only(left: 10.0, right: 10.0),
         child: ListView(
+          physics: BouncingScrollPhysics(),
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -571,7 +580,6 @@ class _PageSecondState extends State<PageSecond> {
         elevation: 2.0,
       ),
         bottomNavigationBar: Container(
-
           height: 50,
           child: ClipRRect(
             borderRadius: BorderRadius.only(
