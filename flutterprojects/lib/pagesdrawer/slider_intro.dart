@@ -6,7 +6,7 @@ import 'package:intro_slider/slide_object.dart';
 import '../task2navigationss.dart';
 
 
-void main() { runApp(MyApp());}
+/*void main() { runApp(MyApp());}
 
 class MyApp extends StatelessWidget {
   @override
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
     );
   }
-}
+}*/
 
 
 class Intro extends StatefulWidget {
