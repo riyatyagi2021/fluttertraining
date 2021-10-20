@@ -35,8 +35,7 @@ class _AnimationsState extends State<Animations> {
                   print(ani[1]);
                   return Lottie.network(ani[index]);
                 }),
-        //Lottie.network('https://assets3.lottiefiles.com/packages/lf20_ah1zbzo1.json'),
-      ),
+            ),
     );
   }
 }

@@ -35,6 +35,8 @@ dependencies:
   eva_icons_flutter: ^3.0.2
   card_swiper: ^1.0.4
   lottie: ^1.2.1
+  intro_slider: ^3.0.2
+
 
 
 dev_dependencies:

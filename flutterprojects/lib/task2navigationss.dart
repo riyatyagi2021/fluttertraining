@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutterprojects/additem.dart';
 import 'package:flutterprojects/pagesdrawer/animatedbottombar.dart';
 import 'package:flutterprojects/pagesdrawer/animationslottie.dart';
+import 'package:flutterprojects/pagesdrawer/slider_intro.dart';
 import 'package:flutterprojects/pagesdrawer/tabview.dart';
 import 'package:flutterprojects/profile.dart';
 import 'package:flutterprojects/profile_list_api.dart';
@@ -36,9 +37,6 @@ class PageSecond extends StatefulWidget {
 }
 
 class _PageSecondState extends State<PageSecond> {
-
-
-
 
 
   @override
@@ -90,8 +88,12 @@ class _PageSecondState extends State<PageSecond> {
             ),
             Divider(),
             ListTile(
-              title: Text("Star"),
-              trailing: Icon(Icons.star),
+              title: Text("Intro"),
+              trailing: Icon(Icons.slideshow),
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(context,MaterialPageRoute(builder:(context)=>Intro()));
+              },
             ),
             Divider(),
             ListTile(
