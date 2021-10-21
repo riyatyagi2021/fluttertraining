@@ -6,7 +6,8 @@ import 'package:intro_slider/slide_object.dart';
 import '../task2navigationss.dart';
 
 
-/*void main() { runApp(MyApp());}
+/*
+void main() { runApp(MyApp());}
 
 class MyApp extends StatelessWidget {
   @override
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
     );
   }
-}*/
+}
+*/
 
 
 class Intro extends StatefulWidget {
@@ -40,10 +42,10 @@ late Function gotoTab;
       Slide(
         backgroundColor: Colors.white,
 
-       centerWidget:Center(
+       widgetDescription:Center(
          child: Container(
            // alignment: Alignment.bottomCenter,
-           margin: EdgeInsets.only(top: 300),
+           //margin: EdgeInsets.only(top: 300),
            padding: EdgeInsets.only(top: 20,left: 40),
             color: Colors.teal.withOpacity(0.5),
            height: 300,
